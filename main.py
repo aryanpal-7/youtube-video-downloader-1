@@ -17,7 +17,7 @@ app.state.limiter = limiter
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://youtube-video-downloader-frontend-two.vercel.app/"],  # Change to specific frontend URL for security
+    allow_origins=["https://youtube-video-downloader-frontend-two.vercel.app"],  # Change to specific frontend URL for security
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
