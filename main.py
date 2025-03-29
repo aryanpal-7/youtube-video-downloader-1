@@ -25,13 +25,8 @@ app.add_middleware(
 )
 
 @app.get("/")
-<<<<<<< HEAD
-def Home()
-    return{"message":"API Running"}
-=======
 def Home():
     return{"message":"API running"}
->>>>>>> 200c1a4 (Final Push)
 
 @app.get("/video_info")
 @limiter.limit("5/second")  # Limit requests to 5 per minute
