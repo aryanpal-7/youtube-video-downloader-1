@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Query, HTTPException, Request
 from pytubefix import YouTube
-from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 from slowapi import Limiter
