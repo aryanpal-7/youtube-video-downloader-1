@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 from slowapi import Limiter
 from slowapi.util import get_remote_address
+import time
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -32,6 +33,7 @@ def Home():
 async def get_video_info(request: Request, url: str):
     """Fetch video details, available resolutions, and audio options."""
     try:
+        time.sleep(2)
         yt = YouTube(url, use_po_token=True)
 
         unique_streams = {}
