@@ -25,6 +25,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def Home()
+    return{"message":"API Running"}
+
 @app.get("/video_info")
 @limiter.limit("5/second")  # Limit requests to 5 per minute
 async def get_video_info(request: Request, url: str):
@@ -95,4 +99,3 @@ async def get_video_info(request: Request, url: str):
         raise HTTPException(status_code=400, detail="Failed to fetch video details. Please check the URL.")
 
 
-app.mount("/", StaticFiles(directory="./", html=True), name="static")
