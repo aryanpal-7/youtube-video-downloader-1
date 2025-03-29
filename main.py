@@ -32,7 +32,7 @@ def Home():
 async def get_video_info(request: Request, url: str):
     """Fetch video details, available resolutions, and audio options."""
     try:
-        yt = YouTube(url)
+        yt = YouTube(url, use_po_token=True)
 
         unique_streams = {}
         unique_audio_streams = {}
